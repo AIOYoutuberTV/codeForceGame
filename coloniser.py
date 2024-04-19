@@ -1,5 +1,7 @@
 from random import randint
 
+version = "indev-0.0.1"
+
 uuidCounter=0
 
 class colonist():
@@ -57,4 +59,34 @@ ec = resource("Electric Charge",0)
 science = resource("Research Points",0)
 lifeSupport = resource("Life Support Intregity",0)
 
-lifeSupportSys = system("Life Support",) #TODO: Add further systems after making psudocode.
+#lifeSupportSys = system("Life Support",) #TODO: Add further systems after making psudocode.
+#system is undefined
+
+
+
+#Terminal-like input
+UserName = "Admin"
+SysName = "Colony189"
+Path = "~"
+def term():
+    endTurn = False
+    while not endTurn:
+        print(UserName+"@"+SysName+":"+Path,end="$ ")
+        cmd = input().lower()
+        print("Inputted>",cmd)
+        if cmd == "signoff":
+            endTurn = True
+        if cmd == "help":
+            print("""version -> operating system's version
+help -> help with commands
+signoff -> logs off to another day""")
+        if cmd == "version":
+            print("Colony Supervisor OS v."+version)
+
+# Main game loop
+
+while True:
+    #Let User do thier turn
+    #Then "tick" the game
+    term()
+    print("Ending Turn")
