@@ -1,0 +1,12 @@
+Logistics management game?
+Some form of colonisation simulation, maybe on a planetary body.
+
+You have to manage the funds and resources.
+Colonists.
+
+(Maybe easy and hard mode, with and without native settlements that will require deplomacy to maintain cordial relationship)
+
+Technological research?
+Think: Cities Skylines but in space
+
+But no building the city part, that automatically generates.

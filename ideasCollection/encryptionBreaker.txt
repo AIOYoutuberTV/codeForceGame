@@ -1,0 +1,1 @@
+You've recieved a text and an encrypted version of it. Figure out which encryption it uses.

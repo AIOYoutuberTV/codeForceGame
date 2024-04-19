@@ -1,0 +1,3 @@
+Like the game Battleship, but 3d.
+
+Network enabled?
