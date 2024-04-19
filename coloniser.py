@@ -57,4 +57,4 @@ ec = resource("Electric Charge",0)
 science = resource("Research Points",0)
 lifeSupport = resource("Life Support Intregity",0)
 
-lifeSupportSys = system("Life Support",)
+lifeSupportSys = system("Life Support",) #TODO: Add further systems after making psudocode.
