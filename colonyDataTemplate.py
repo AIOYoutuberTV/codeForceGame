@@ -52,9 +52,9 @@ class modifier():
         self.magnitude=magnitude
        # self.system=system
     def applyModifier(self):
-        pass
+        return(self.magnitude)
 
 class colony():
     def __init__(self, name:str, colonist:int, lifeSupport:resource, ore:resource, food:resource, power:resource, researchPoints:resource, morale:resource):
         
-        return(self.magnitude)
+       
