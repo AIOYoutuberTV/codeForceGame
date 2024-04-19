@@ -1,4 +1,4 @@
-from colonyData import *
+from colonyDataTemplate import version
 
 #Terminal-like input
 UserName = "Admin"
