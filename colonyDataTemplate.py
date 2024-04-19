@@ -55,6 +55,10 @@ class modifier():
         return(self.magnitude)
 
 class colony():
-    def __init__(self, name:str, colonist:int, lifeSupport:resource, ore:resource, food:resource, power:resource, researchPoints:resource, morale:resource):
-        
+    def __init__(self,name:str,colonists:int) -> None:
+       self.name = name
+       self.colonists = colonists
+    class resource():
+        def __init_subclass__(cls) -> None:
+            pass
        
