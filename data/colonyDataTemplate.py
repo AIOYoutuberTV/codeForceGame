@@ -1,6 +1,4 @@
-from data.colonyData import ore,funds
-
-version = "indev-0.0.1"
+#from data.colonyData import metal,funds
 
 class modifier():
     def __init__(self,magnitude):
@@ -59,13 +57,14 @@ class structure():
     def useStructure(self):
         pass #TODO: Come back to this later.
     def build(self, useOre, amount=1):
-        if useOre == True:
-            ore.spend((self.cost[ore])*amount)
-        else:
-            funds.spend((self.cost[funds])*amount)
-        self.count += amount
-    def getAmount(self):
-        return self.count
+        pass #TODO: Figure out why this crashes
+#        if useOre == True:
+#            metal.spend((self.cost[metal])*amount)
+#        else:
+#            funds.spend((self.cost[funds])*amount)
+#        self.count += amount
+#    def getAmount(self):
+#        return self.count
 
 class habitatStructure(structure):
     def __init__(self, uuid, habitatSize:int, consumption:dict, cost:dict, count:int, production:dict={}):
