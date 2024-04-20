@@ -13,9 +13,15 @@ def clear():
     else:
         _ = system('clear')
 
-progbar_size = 80 #What does this do? --Kate
+ #Oh its just some leftover global var for all of it
 
 class TUI:
+    @staticmethod
+    def progressBarString(v,maxv,progbar_size = 80,start="[",end="]",fill="#",gap=" "):
+        f = v/maxv
+        f *= progbar_size
+        f = round(f)
+        return start+fill*f+gap*(progbar_size-f)+end
     
     @staticmethod
     def __init__(width,height):
@@ -57,10 +63,7 @@ class TUI:
             #print(i)
             print(i["name"],i["value"],"/",i["maxvalue"])
             if i["hasProgressBar"]:
-                f = i["value"]/i["maxvalue"]
-                f *= progbar_size
-                f = round(f)
-                print("["+"#"*f+" "*(progbar_size-f)+"]")
+                print(TUI.progressBarString(i["value"],i["maxvalue"]))
         
         print("Booting system...")
         print(TUI.buffer.replace("\n","\n# "),end="")
