@@ -14,7 +14,7 @@ class expert(): #unemployed
         self.morale=morale
 
 class advisor(expert): #employed
-    def __init__(self, name, job, morale, position, modifier:modifier):
+    def __init__(self, name="NONE", job="NONE", morale="NONE", position="NONE", modifier:modifier=modifier(1)):
         super().__init__(name, job, morale)
         self.position=position
         self.modifier=modifier
