@@ -1,4 +1,6 @@
 from random import randint
+from colonyData import *
+import uuid
 
 version = "indev-0.0.1"
 
@@ -20,17 +22,17 @@ class advisor(expert): #employed
         pass
  
 class resource(): #N/A, ore, food, ec, data, morale
-    def __init__(self,name,value):
-        self.value=value
+    def __init__(self,name,count):
+        self.count=count
         self.name=name
     def getValue(self):
-        return self.value
+        return self.count
     def setValue(self, amount):
-        self.value=amount
+        self.count=amount
     def getType(self):
         return self.name
     def addValue(self, amount):
-        self.value += amount
+        self.count += amount
 
 """
 class system(): #lifesupport, oreMining, culinary, electricityGen, research, morale
@@ -55,10 +57,12 @@ class modifier():
         return(self.magnitude)
 
 class colony():
-    def __init__(self,name:str,colonists:int) -> None:
+    def __init__(self,name:str,colonists:int,ore:resource,food:resource,energy:resource,science:resource,lifeSupport:resource) -> None:
+       self.uuid=uuid.uuid1()
        self.name = name
        self.colonists = colonists
-    class resource():
-        def __init_subclass__(cls) -> None:
-            pass
-       
+       self.ore = ore
+       self.food = food
+       self.energy = energy
+       self.science = science
+       self.lifeSupport = lifeSupport
