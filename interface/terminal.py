@@ -1,5 +1,3 @@
-#from data.colonyDataTemplate import version
-#what
 version="0.0.1-α"
 from tui import TUI
 TUI.__init__(10,10)
