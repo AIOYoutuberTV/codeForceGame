@@ -9,7 +9,7 @@ energy = resource("Electric Charge",500)
 science = resource("Research Points",0)
 lifeSupport = resource("Life Support Intregity (%)",100)
 #TODO: When implementing turn, cap LSI at 100.
-funds = fund("Funds (Millions)",500)
+funds = fund("Funds (M€)",500)
 
 #define structures
 solarPanel = structure(0,{energy:15},{},{funds:4,ore:5},5)

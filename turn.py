@@ -2,56 +2,53 @@ from data.colonyDataTemplate import *
 from data.colonyTemplate import *
 from data.colonyData import *
 
-def calcUse(input:structure):
-    
+def structureRun(inflow:structure=solarPanel):
     #calculate the gains
-    productionKeys = list(input.production.keys())
+    productionKeys = list(inflow.production.keys())
     i = 0
-    while i < len(input.production):
+    while i < len(inflow.production):
         match productionKeys[i].name:
-            case 'ore':
-                ore.get(input.production[ore]*input.count)
+            case 'Ore':
+                ore.get(inflow.production[ore]*inflow.count)
                 i+=1
-            case 'food':
-                food.get(input.production[food]*input.count)
+            case 'Food':
+                food.get(inflow.production[food]*inflow.count)
                 i+=1
-            case 'energy':
-                energy.get(input.production[energy]*input.count)
+            case 'Electric Charge':
+                energy.get(inflow.production[energy]*inflow.count)
                 i+=1
-            case 'science':
-                science.get(input.production[science]*input.count)
+            case 'Research Points':
+                science.get(inflow.production[science]*inflow.count)
                 i+=1
-            case 'lifeSupport':
-                lifeSupport.get(input.production[lifeSupport]*input.count)
+            case 'Life Support Intregity (%)':
+                lifeSupport.get(inflow.production[lifeSupport]*inflow.count)
                 i+=1
-            case 'funds':
-                funds.get(input.production[fund]*input.count)
+            case 'Funds (M€)':
+                funds.get(inflow.production[fund]*inflow.count)
                 i+=1
     del(i)
 
     #Calculate the drains
-    consumptionKeys = list(input.consumption.keys())
+    consumptionKeys = list(inflow.consumption.keys())
     i = 0
-    while i < len(input.consumption):
+    while i < len(inflow.consumption):
         match consumptionKeys[i].name:
-            case 'ore':
-                ore.spend(input.consumption[ore]*input.count)
+            case 'Ore':
+                ore.spend(inflow.consumption[ore]*inflow.count)
                 i+=1
-            case 'food':
-                food.spend(input.consumption[food]*input.count)
+            case 'Food':
+                food.spend(inflow.consumption[food]*inflow.count)
                 i+=1
-            case 'energy':
-                energy.spend(input.consumption[energy]*input.count)
+            case 'Electric Charge':
+                energy.spend(inflow.consumption[energy]*inflow.count)
                 i+=1
-            case 'science':
-                science.spend(input.consumption[science]*input.count)
+            case 'Research Points':
+                science.spend(inflow.consumption[science]*inflow.count)
                 i+=1
-            case 'lifeSupport':
-                lifeSupport.spend(input.consumption[lifeSupport]*input.count)
+            case 'Life Support Intregity (%)':
+                lifeSupport.spend(inflow.consumption[lifeSupport]*inflow.count)
                 i+=1
-            case 'funds':
-                funds.spend(input.consumption[fund]*input.count)
+            case 'Funds (M€)':
+                funds.spend(inflow.consumption[fund]*inflow.count)
                 i+=1
     del(i)
-
-pass
