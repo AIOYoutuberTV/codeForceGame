@@ -1,5 +1,8 @@
-from data.colonyDataTemplate import version
-
+#from data.colonyDataTemplate import version
+#what
+version="0.0.1"
+from tui import TUI
+TUI.__init__(10,10)
 #Terminal-like input
 UserName = "Admin"
 SysName = "Colony189"
@@ -7,22 +10,35 @@ Path = "~"
 def term():
     endTurn = False
     while not endTurn:
-        print(UserName+"@"+SysName+":"+Path,end="$ ")
-        cmd = input().lower()
-        print("Inputted>",cmd)
+        TUI.print(UserName+"@"+SysName+":"+Path,end="$ ")
+        TUI.render()
+        cmd = input()
+        TUI.print(cmd)
+        cmd = cmd.lower()
         if cmd == "signoff":
             endTurn = True
-        if cmd == "help":
-            print("""version -> operating system's version
+            TUI.clearconsole()
+        elif cmd == "help":
+            TUI.print("""version -> operating system's version
 help -> help with commands
-signoff -> logs off to another day""")
-        if cmd == "version":
-            print("Colony Supervisor OS v."+version)
+signoff -> logs off to another day
+clear -> clears the terminal""")
+        elif cmd == "version":
+            TUI.print("Colony Supervisor OS v."+version)
+        elif cmd == "clear":
+            TUI.clearconsole()
+        else:
+            TUI.print("Unknown Command")
+        
 
 # Main game loop
 
 while True:
+    TUI.addInfo("Energy",69,100,True)
+    TUI.addInfo("Morale",10,100)
     #Let User do thier turn
     #Then "tick" the game
     term()
-    print("Ending Turn")
+    TUI.print("Ending Turn")
+    TUI.render()
+    
