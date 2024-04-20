@@ -28,6 +28,9 @@ class TUI:
     def addInfo(name,value,maxvalue,hasProgressBar=False):
         TUI.information.append({"name":name,"value":value,"maxvalue":maxvalue,"hasProgressBar":hasProgressBar})
          
+    @staticmethod
+    def clearInfo():
+        TUI.information = []
     
     @staticmethod
     def print(*text,sep=" ",end="\n"):
