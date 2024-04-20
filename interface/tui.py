@@ -16,6 +16,13 @@ def clear():
  #Oh its just some leftover global var for all of it
 
 class TUI:
+    # @param v value of the progress bar
+    # @param v maximum value of the progress bar
+    # @param progbar_size = 80 progress bar's size
+    # @param start = "[" progress bar starting string
+    # @param end = "]" progress bar ending string
+    # @param fill = "#" progress bar's fill character
+    # @param gap = "#" progress bar's space character
     @staticmethod
     def progressBarString(v,maxv,progbar_size = 80,start="[",end="]",fill="#",gap=" "):
         f = v/maxv
