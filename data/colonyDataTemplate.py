@@ -58,12 +58,12 @@ class structure():
         self.count=count
     def useStructure(self):
         pass #TODO: Come back to this later.
-    def build(self, useOre, amount=1):
-        if useOre == True:
-            ore.spend((self.cost[ore])*amount)
-        else:
-            funds.spend((self.cost[funds])*amount)
-        self.count += amount
+#    def build(self, useOre, amount=1): #TODO: The building system broke.
+#        if useOre == True:
+#            ore.spend((self.cost[ore])*amount)
+#        else:
+#            funds.spend((self.cost[funds])*amount)
+#        self.count += amount
     def getAmount(self):
         return self.count
 
