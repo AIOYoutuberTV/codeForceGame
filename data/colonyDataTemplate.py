@@ -1,4 +1,4 @@
-from data.colonyData import ore,funds
+from colonyData import ore,funds
 
 version = "indev-0.0.1"
 
