@@ -7,32 +7,63 @@ TUI.__init__(10,10)
 UserName = "Admin"
 SysName = "Colony189"
 Path = "~"
+
+Commands = {}
+endTurn = False
+def register_command(name,callback):
+    Commands[name] = callback
+
 def term():
     endTurn = False
     while not endTurn:
         TUI.print(UserName+"@"+SysName+":"+Path,end="$ ")
         TUI.render()
-        cmd = input()
-        TUI.print(cmd)
-        cmd = cmd.lower()
-        if cmd == "signoff":
-            endTurn = True
-            TUI.clearconsole()
-        elif cmd == "help":
-            TUI.print("""version -> operating system's version
+        inp = input()
+        TUI.print(inp)
+        inp = inp.lower().split(" ")
+        
+        cmd = inp[0]
+        args = inp[1:]
+        
+        
+        
+        if cmd in Commands:
+            Commands[cmd](*args)
+        else:
+            TUI.print("Unknown Command \""+cmd+"\"")
+        
+def signoff(*args):
+    endTurn = True
+    TUI.clearconsole()
+    
+def help(*args):
+    TUI.print("""ver,version -> operating system's version
 help -> help with commands
 signoff -> logs off to another day
-clear -> clears the terminal""")
-        elif cmd == "version":
-            TUI.print("Colony Supervisor OS v."+version)
-        elif cmd == "clear":
-            TUI.clearconsole()
-        elif cmd == "sell":
-            print("TO BE ADDED")
-            pass #TODO: Add a sell feature.
-        else:
-            TUI.print("Unknown Command")
-        
+clr,clear,clearscreen -> clears the terminal
+sell -> to be added""")
+    
+def ver(*args):
+    TUI.print("Colony Supervisor OS v."+version)
+    
+def clr(*args):
+    TUI.clearconsole()
+    
+def sell(*args):
+    print("TO BE ADDED")
+    #Use TUI.print() if you wanna make it render anything
+    pass #TODO: Add a sell feature.
+    
+
+register_command("signoff",signoff)     
+register_command("help",help)   
+register_command("version",ver)
+register_command("ver",ver)
+register_command("clearscreen",clr)
+register_command("clear",clr)
+register_command("clr",clr)
+register_command("sell",sell)
+
 
 # Main game loop
 
