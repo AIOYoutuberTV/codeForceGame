@@ -6,6 +6,9 @@ This game is a turn based RPG about administering a colony on a randomly generat
 
 You can make structure, sell your resources, do research, upgrade buildings, and do missions.[*](/README.md#features)
 
+## Installation
+[Work in progress]
+
 ## FEATURES
 This project is still in the α (alpha) phase, and not all features are implemented. If anything, **this is currently a technological demonstrator**. There will be bugs, some features are still incomplete, but there still are many to come.
 
