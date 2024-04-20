@@ -11,7 +11,7 @@ Path = "~"
 Commands = {}
 endTurn = False
 def register_command(name,callback):
-    Commands[name] = callback
+    Commands[name.lower()] = callback
 
 def term():
     endTurn = False
