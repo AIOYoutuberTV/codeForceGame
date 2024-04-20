@@ -1,4 +1,4 @@
-from colonyDataTemplate import *
+from data.colonyDataTemplate import *
 uuidCounter=0
 
 noAdvisor = advisor("{NONE}","{NONE}","{NONE}","{NONE}",modifier(1))

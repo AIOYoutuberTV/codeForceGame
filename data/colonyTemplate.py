@@ -1,6 +1,6 @@
 import uuid
-from colonyDataTemplate import *
-from colonyData import *
+from data.colonyDataTemplate import *
+from data.colonyData import *
 
 class colony():
     def __init__(self,name:str,colonists:int,activeAdvisor:advisor=noAdvisor,

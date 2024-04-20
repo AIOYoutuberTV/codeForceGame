@@ -55,7 +55,7 @@ class structure():
         self.cost=cost
         self.count=count
     def useStructure(self):
-        pass #TODO: Come back to this later.
+        return self.production
 #    def build(self, useOre, amount=1): #TODO: The building system broke.
 #        if useOre == True:
 #            ore.spend((self.cost[ore])*amount)
