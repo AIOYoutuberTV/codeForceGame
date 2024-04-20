@@ -13,7 +13,7 @@ def clear():
     else:
         _ = system('clear')
 
-progbar_size = 80
+progbar_size = 80 #What does this do? --Kate
 
 class TUI:
     
@@ -31,7 +31,7 @@ class TUI:
     
     @staticmethod
     def print(*text,sep=" ",end="\n"):
-        t = False
+        t = False #Why, @cj05. Why?
         for i in text:
             if t:
                 TUI.buffer+=sep
@@ -59,6 +59,5 @@ class TUI:
                 f = round(f)
                 print("["+"#"*f+" "*(progbar_size-f)+"]")
         
-        print("Booting up terminal")
-        print("/"+"#"*80+"\\",end="")
+        print("Booting system...")
         print(TUI.buffer.replace("\n","\n# "),end="")

@@ -1,12 +1,13 @@
-from random import randint
-from .. import *
-import uuid
-from data.colonyData import *
+from data.colonyData import ore,funds
 
 version = "indev-0.0.1"
 
-uuidCounter=0
-
+class modifier():
+    def __init__(self,magnitude):
+        self.magnitude=magnitude
+       # self.system=system
+    def applyModifier(self):
+        return(self.magnitude)
 
 class expert(): #unemployed
     def __init__(self,name,job,morale):
@@ -15,7 +16,7 @@ class expert(): #unemployed
         self.morale=morale
 
 class advisor(expert): #employed
-    def __init__(self, name, job, morale, position, modifier):
+    def __init__(self, name, job, morale, position, modifier:modifier):
         super().__init__(name, job, morale)
         self.position=position
         self.modifier=modifier
@@ -57,30 +58,19 @@ class structure():
         self.count=count
     def useStructure(self):
         pass #TODO: Come back to this later.
-    def build(self, amount, useOre):
+    def build(self, useOre, amount=1):
         if useOre == True:
-            ore.spend(self.cost[ore])
+            ore.spend((self.cost[ore])*amount)
+        else:
+            funds.spend((self.cost[funds])*amount)
         self.count += amount
+    def getAmount(self):
+        return self.count
 
-
-class modifier():
-    def __init__(self,magnitude):
-        self.magnitude=magnitude
-       # self.system=system
-    def applyModifier(self):
-        return(self.magnitude)
-
-class colony():
-    def __init__(self,name:str,colonists:int,
-                 ore:resource,food:resource,energy:resource,science:resource,lifeSupport:resource,funds:resource,
-                 solarPanel:structure):
-       self.uuid=uuid.uuid1()
-       self.name = name
-       self.colonists = colonists
-       self.ore = ore
-       self.food = food
-       self.energy = energy
-       self.science = science
-       self.lifeSupport = lifeSupport
-       self.funds = funds
-       self.solarPanel = solarPanel
+class habitatStructure(structure):
+    def __init__(self, uuid, habitatSize:int, consumption:dict, cost:dict, count:int, production:dict={}):
+        super().__init__(uuid,production,consumption,cost,count)
+        self.habitatSize = habitatSize
+    def getHabitatCapacity(self):
+        return self.habitatSize * self.count
+        
