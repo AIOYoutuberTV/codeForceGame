@@ -23,6 +23,7 @@ class TUI:
     # @param end = "]" progress bar ending string
     # @param fill = "#" progress bar's fill character
     # @param gap = "#" progress bar's space character
+    # @return string of the progress bar
     @staticmethod
     def progressBarString(v,maxv,progbar_size = 80,start="[",end="]",fill="#",gap=" "):
         f = v/maxv
