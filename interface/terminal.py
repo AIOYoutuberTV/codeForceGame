@@ -1,6 +1,6 @@
 #from data.colonyDataTemplate import version
 #what
-version="0.0.1-β"
+version="0.0.1-α"
 from tui import TUI
 TUI.__init__(10,10)
 #Terminal-like input
@@ -27,6 +27,9 @@ clear -> clears the terminal""")
             TUI.print("Colony Supervisor OS v."+version)
         elif cmd == "clear":
             TUI.clearconsole()
+        elif cmd == "sell":
+            print("TO BE ADDED")
+            pass #TODO: Add a sell feature.
         else:
             TUI.print("Unknown Command")
         
