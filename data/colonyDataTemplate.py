@@ -1,6 +1,4 @@
-from colonyData import ore,funds
-
-version = "indev-0.0.1"
+#from colonyData import ore,funds
 
 class modifier():
     def __init__(self,magnitude):
