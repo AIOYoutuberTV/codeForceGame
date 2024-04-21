@@ -1,19 +1,18 @@
 
 # import only system from os
-from os import system, name
+import os
  
 # define our clear function
 def clear():
  
     # for windows
-    if name == 'nt':
-        _ = system('cls')
+    if os.name == 'nt':
+        _ = os.system('cls')
  
     # for mac and linux(here, os.name is 'posix')
     else:
-        _ = system('clear')
+        _ = os.system('clear')
 
- #Oh its just some leftover global var for all of it
 
 class TUI:
     # @param v value of the progress bar
@@ -32,11 +31,10 @@ class TUI:
         return start+fill*f+gap*(progbar_size-f)+end
     
     @staticmethod
-    def __init__(width,height):
-        #TUI.width = width
-        #TUI.height = height
+    def __init__():
         TUI.buffer = "\n"
         TUI.information = []
+        pass
 
     @staticmethod
     def addInfo(name,value,maxvalue,hasProgressBar=False):

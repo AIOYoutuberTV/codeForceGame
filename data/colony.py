@@ -1,5 +1,5 @@
 import pickle
-from colonyTemplate import *
+from data.colonyTemplate import *
 
 def saveGameState(input:colony,saveNumber:int):
 	saveFile = open("saveFileNo"+str(saveNumber), "w+b")

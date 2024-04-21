@@ -1,10 +1,14 @@
 version="0.0.1-α"
-from tui import TUI
-TUI.__init__(10,10)
+from interface.tui import TUI
+
 #Terminal-like input
 UserName = "Admin"
 SysName = "Colony189"
 Path = "~"
+
+EventCallback = {}
+def bind(event,callback):
+    EventCallback[event] = callback
 
 Commands = {}
 endTurn = False
@@ -53,8 +57,27 @@ def clr(*args):
     TUI.clearconsole()
     
 def sell(*args):
-    print("TO BE ADDED")
-    #Use TUI.print() if you wanna make it render anything
+    l=len(args)
+    if l < 1:
+        TUI.print("Error: You Must Specify What Resource to Sell")
+        pass
+    c = 1
+    if l >= 2:
+        c = args[1]
+    output = EventCallback["sell"](args[0],c)
+    TUI.print(output)
+    pass #TODO: Implement sell function.
+
+def buy(*args):
+    l=len(args)
+    if l < 1:
+        TUI.print("Error: You Must Specify What Buildings to Build")
+        pass
+    c = 1
+    if l >= 2:
+        c = args[1]
+    output = EventCallback["buy"](args[0],c)
+    TUI.print(output)
     pass #TODO: Implement sell function.
     
 
@@ -66,17 +89,11 @@ register_command("clearscreen",clr)
 register_command("clear",clr)
 register_command("clr",clr)
 register_command("sell",sell)
+register_command("buy",buy)
 register_command("remove",remove)
 register_command("rm",remove)
 
 # Main game loop
 
-while True:
-    TUI.addInfo("Energy",69,100,True)
-    TUI.addInfo("Morale",10,100)
-    #Let User do thier turn
-    #Then "tick" the game
-    term()
-    TUI.print("Ending Turn")
-    TUI.render()
+
     
