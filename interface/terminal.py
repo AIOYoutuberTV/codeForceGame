@@ -1,5 +1,3 @@
-#from data.colonyDataTemplate import version
-#what
 version="0.0.1-α"
 from tui import TUI
 TUI.__init__(10,10)
@@ -57,7 +55,7 @@ def clr(*args):
 def sell(*args):
     print("TO BE ADDED")
     #Use TUI.print() if you wanna make it render anything
-    pass #TODO: Add a sell feature.
+    pass #TODO: Implement sell function.
     
 
 register_command("signoff",signoff)     
