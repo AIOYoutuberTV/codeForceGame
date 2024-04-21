@@ -49,7 +49,6 @@ def structureRun(inflow:structure):
 			case 'Food':
 				food.spend(inflow.consumption[food]*inflow.count)
 				i+=1
-
 			case 'Electric Charge':
 				energy.spend(inflow.consumption[energy]*inflow.count)
 				i+=1
@@ -76,4 +75,10 @@ def structureBuild(inflow:structure,howMany:int):
 		inflow.count += howMany
 		return "Builing successful! You now have ",howMany," more ",inflow.__qualname__
 	
-# def resourceSell(resource)
+def resourceSell(inflow:resource,howMuch:int):
+	if howMuch < inflow.count:
+		return "Error: Not sufficient resources."
+	else:
+		funds.get(inflow.pricePerUnit*howMuch)
+		inflow.spend(howMuch)
+		return "Selling sucessful! You now have",inflow.pricePerUnit*howMuch,"more funds!"	
