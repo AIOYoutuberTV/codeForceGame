@@ -75,3 +75,5 @@ def structureBuild(inflow:structure,howMany:int):
 		funds.spend(howMany*inflow.cost)
 		inflow.count += howMany
 		return "Builing successful! You now have ",howMany," more ",inflow.__qualname__
+	
+# def resourceSell(resource)

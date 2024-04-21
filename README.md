@@ -15,15 +15,16 @@ This project is still in the α (alpha) phase, and not all features are implemen
 ### CURRENTLY IMPLEMENTED
 - Structure building
 - Resource system
-- Game save and load
+- Resource selling
 - Interface
 
 ### PLANNED
-- Resource selling/buying system
+- Resource buying
 - Colonist morale system
 - Advisors, with buffs and debuffs
 - Missions from agencies (KSP-like)
 - Tech tree (and upgrade system)
+- Game save and load
 
 ## CONTRIBUTORS
 <a href="https://github.com/AIOYoutuberTV/codeForceGame/graphs/contributors?columns=1">

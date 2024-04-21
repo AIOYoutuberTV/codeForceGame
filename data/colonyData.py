@@ -3,7 +3,7 @@ uuidCounter=0
 
 noAdvisor = advisor("{NONE}","{NONE}","{NONE}","{NONE}",modifier(1))
 #define resources
-ore = resource("Ore",500)
+ore = resource("Ore",500,1)
 food = resource("Food",500)
 energy = resource("Electric Charge",500)
 science = resource("Research Points",0)
