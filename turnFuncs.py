@@ -66,7 +66,7 @@ def structureRun(inflow:structure):
 				i+=1
 	del(i)
 
-def structureBuild(inflow:structure,howMany:int):
+def structureBuild(inflow:structure,howMany:int=1):
 	totalCost = howMany * inflow.cost
 	if totalCost < funds.count:
 		return "Error: Not sufficient funds."
@@ -75,7 +75,7 @@ def structureBuild(inflow:structure,howMany:int):
 		inflow.count += howMany
 		return "Builing successful! You now have ",howMany," more ",inflow.__qualname__
 	
-def resourceSell(inflow:resource,howMuch:int):
+def resourceSell(inflow:resource,howMuch:int=1):
 	if howMuch < inflow.count:
 		return "Error: Not sufficient resources."
 	else:
