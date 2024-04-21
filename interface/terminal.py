@@ -50,7 +50,7 @@ def clr(*args):
 def sell(*args):
     print("TO BE ADDED")
     #Use TUI.print() if you wanna make it render anything
-    pass #TODO: Add a sell feature.
+    pass #TODO: Implement sell function.
     
 
 register_command("signoff",signoff)     

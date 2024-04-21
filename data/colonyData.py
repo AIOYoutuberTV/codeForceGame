@@ -8,7 +8,7 @@ food = resource("Food",500)
 energy = resource("Electric Charge",500)
 science = resource("Research Points",0)
 lifeSupport = resource("Life Support Intregity (%)",100)
-#TODO: When implementing turn, cap LSI at 100.
+#DONE: When implementing turn, cap LSI at 100... KINDA. It's not exactly perfect.
 funds = fund("Funds (M€)",500)
 
 #define structures

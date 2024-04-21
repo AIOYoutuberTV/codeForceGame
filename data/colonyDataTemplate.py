@@ -50,14 +50,14 @@ class system(): #lifesupport, oreMining, culinary, electricityGen, research, mor
 
 class structure():
 	def __init__(self,uuid,production:dict,consumption:dict,cost:int,count:int):
-		self.uuid=uuid #TODO: implement a UUID generator (line 3)
+		self.uuid=uuid
 		self.production=production
 		self.consumption=consumption
 		self.cost=cost
 		self.count=count
 	def useStructure(self):
 		return self.production
-#    def build(self, useOre, amount=1): #TODO: The building system broke.
+#    def build(self, useOre, amount=1): #DONE: The building system broke... Reimplemented as a global function, just funds.
 #        if useOre == True:
 #            ore.spend((self.cost[ore])*amount)
 #        else:
