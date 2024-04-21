@@ -32,31 +32,31 @@ class TUI:
     
     @staticmethod
     def __init__():
-        TUI.buffer = "\n"
-        TUI.information = {}
+        TUI.buffer = "\n" # type: ignore
+        TUI.information = {} # type: ignore
         pass
 
     @staticmethod
     def addInfo(name,value,maxvalue=-1,hasProgressBar=False):
-        TUI.information[name]={"value":value,"maxvalue":maxvalue,"hasProgressBar":hasProgressBar}
+        TUI.information[name]={"value":value,"maxvalue":maxvalue,"hasProgressBar":hasProgressBar} # type: ignore
          
     @staticmethod
     def clearInfo():
-        TUI.information = {}
+        TUI.information = {} # type: ignore
     
     @staticmethod
     def print(*text,sep=" ",end="\n"):
         t = False #Why, @cj05. Why?
         for i in text:
             if t:
-                TUI.buffer+=sep
-            TUI.buffer+=i
+                TUI.buffer+=sep # type: ignore
+            TUI.buffer+=i # type: ignore
             t=True
-        TUI.buffer+=end
+        TUI.buffer+=end # type: ignore
         
     @staticmethod
     def clearconsole():
-        TUI.buffer="\n"
+        TUI.buffer="\n" # type: ignore
     
     @staticmethod
     def render(isclrscr=True):
@@ -65,9 +65,9 @@ class TUI:
             
         print("Colony Data")
         
-        for key in TUI.information:
+        for key in TUI.information: # type: ignore
             #print(i)
-            i = TUI.information[key]
+            i = TUI.information[key] # type: ignore
             value = i["value"].getValue()
             if i["maxvalue"] >= 0:
                 print(key,value,"/",i["maxvalue"])
@@ -78,4 +78,4 @@ class TUI:
 
         
         print("Booting system...")
-        print(TUI.buffer.replace("\n","\n# "),end="")
+        print(TUI.buffer.replace("\n","\n# "),end="") # type: ignore
