@@ -6,7 +6,7 @@ This game is a turn based RPG about administering a colony on a randomly generat
 
 You can make structure, sell your resources, do research, upgrade buildings, and do missions.[*](/README.md#features)
 
-## Installation
+## INSTALLATION
 [Work in progress]
 
 ## FEATURES
