@@ -61,6 +61,7 @@ def sell(*args):
     if l < 1:
         TUI.print("Error: You Must Specify What Resource to Sell")
         pass
+        return
     c = 1
     if l >= 2:
         c = args[1]
@@ -73,6 +74,7 @@ def buy(*args):
     if l < 1:
         TUI.print("Error: You Must Specify What Buildings to Build")
         pass
+        return
     c = 1
     if l >= 2:
         c = args[1]
@@ -81,7 +83,7 @@ def buy(*args):
     pass #TODO: Implement sell function.
     
 
-register_command("signoff",signoff)     
+register_command("signoff",signoff)
 register_command("help",help)   
 register_command("version",ver)
 register_command("ver",ver)
