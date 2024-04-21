@@ -22,10 +22,11 @@ class advisor(expert): #employed
 		pass
 
 class resource(): #N/A, ore, food, ec, data, morale,funds
-	def __init__(self,name,count,pricePerUnit:int=0):
+	def __init__(self,uuid,name,count,pricePerUnit:int=0):
 		self.count=count
 		self.name=name
 		self.pricePerUnit=pricePerUnit
+		self.uuid=uuid
 	def getValue(self):
 		return self.count
 	def setValue(self, amount):

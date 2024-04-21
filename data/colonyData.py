@@ -3,11 +3,11 @@ uuidCounter=0
 
 noAdvisor = advisor("{NONE}","{NONE}","{NONE}","{NONE}",modifier(1))
 #define resources
-ore = resource("Ore",500,1)
-food = resource("Food",500)
-energy = resource("Electric Charge",500)
-science = resource("Research Points",0)
-lifeSupport = resource("Life Support Intregity (%)",100)
+ore = resource(0,"Ore",500,1)
+food = resource(1,"Food",500)
+energy = resource(2,"Electric Charge",500)
+science = resource(3,"Research Points",0)
+lifeSupport = resource(4,"Life Support Intregity (%)",100)
 #DONE: When implementing turn, cap LSI at 100... KINDA. It's not exactly perfect.
 funds = fund("Funds (M€)",500)
 
