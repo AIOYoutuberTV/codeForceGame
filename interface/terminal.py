@@ -64,7 +64,7 @@ def sell(*args):
         return
     c = 1
     if l >= 2:
-        c = args[1]
+        c = int(args[1])
     output = EventCallback["sell"](args[0],c)
     TUI.print(output)
     pass #TODO: Implement sell function.
@@ -77,7 +77,7 @@ def buy(*args):
         return
     c = 1
     if l >= 2:
-        c = args[1]
+        c = int(args[1])
     output = EventCallback["buy"](args[0],c)
     TUI.print(output)
     pass #TODO: Implement sell function.

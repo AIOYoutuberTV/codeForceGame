@@ -33,16 +33,16 @@ class TUI:
     @staticmethod
     def __init__():
         TUI.buffer = "\n"
-        TUI.information = []
+        TUI.information = {}
         pass
 
     @staticmethod
-    def addInfo(name,value,maxvalue,hasProgressBar=False):
-        TUI.information.append({"name":name,"value":value,"maxvalue":maxvalue,"hasProgressBar":hasProgressBar})
+    def addInfo(name,value,maxvalue=-1,hasProgressBar=False):
+        TUI.information[name]={"value":value,"maxvalue":maxvalue,"hasProgressBar":hasProgressBar}
          
     @staticmethod
     def clearInfo():
-        TUI.information = []
+        TUI.information = {}
     
     @staticmethod
     def print(*text,sep=" ",end="\n"):
@@ -65,11 +65,17 @@ class TUI:
             
         print("Colony Data")
         
-        for i in TUI.information:
+        for key in TUI.information:
             #print(i)
-            print(i["name"],i["value"],"/",i["maxvalue"])
-            if i["hasProgressBar"]:
-                print(TUI.progressBarString(i["value"],i["maxvalue"]))
+            i = TUI.information[key]
+            value = i["value"].getValue()
+            if i["maxvalue"] >= 0:
+                print(key,value,"/",i["maxvalue"])
+                if i["hasProgressBar"]:
+                    print(TUI.progressBarString(value,i["maxvalue"]))
+            else:
+                print(key,value)
+
         
         print("Booting system...")
         print(TUI.buffer.replace("\n","\n# "),end="")
