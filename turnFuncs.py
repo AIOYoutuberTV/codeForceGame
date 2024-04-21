@@ -74,11 +74,11 @@ def structureBuild(inflow:structure,howMany:int=1):
 		funds.spend(howMany*inflow.cost)
 		inflow.count += howMany
 		return "Builing successful! You now have "+str(howMany)+" more "+str(inflow.name)
-	
+
 def resourceSell(inflow:resource,howMuch:int=1):
 	if howMuch > inflow.count:
 		return "Error: Not sufficient resources."
 	else:
 		funds.get(inflow.pricePerUnit*howMuch)
 		inflow.spend(howMuch)
-		return "Selling sucessful! You now have "+str(inflow.pricePerUnit*howMuch)+" more funds!"	
+		return "Selling sucessful! You now have "+str(inflow.pricePerUnit*howMuch)+" more funds!"
