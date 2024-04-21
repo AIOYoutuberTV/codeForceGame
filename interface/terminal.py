@@ -69,7 +69,7 @@ def sell(*args):
     TUI.print(output)
     pass #TODO: Implement sell function.
 
-def buy(*args):
+def build(*args):
     l=len(args)
     if l < 1:
         TUI.print("Error: You Must Specify What Buildings to Build")
@@ -78,7 +78,7 @@ def buy(*args):
     c = 1
     if l >= 2:
         c = int(args[1])
-    output = EventCallback["buy"](args[0],c)
+    output = EventCallback["build"](args[0],c)
     TUI.print(output)
     pass #TODO: Implement sell function.
     
@@ -91,7 +91,7 @@ register_command("clearscreen",clr)
 register_command("clear",clr)
 register_command("clr",clr)
 register_command("sell",sell)
-register_command("buy",buy)
+register_command("build",build)
 register_command("remove",remove)
 register_command("rm",remove)
 

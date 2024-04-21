@@ -7,7 +7,7 @@ from interface.tui import *
 import turnFuncs as Turns
 TUI.__init__()
 term.bind("sell",lambda x,y: Turns.resourceSell(resources[x],y) if (x in resources) else "Error: Resource Doesnt Exist")
-term.bind("buy",lambda x,y: Turns.structureBuild(structures[x],y) if (x in structures) else "Error: Resource Doesnt Exist")
+term.bind("build",lambda x,y: Turns.structureBuild(structures[x],y) if (x in structures) else "Error: Resource Doesnt Exist")
 
 for key in resources:
     res = resources[key]
