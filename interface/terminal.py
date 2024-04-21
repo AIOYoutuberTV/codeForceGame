@@ -31,6 +31,11 @@ def term():
             Commands[cmd](*args)
         else:
             TUI.print("Unknown Command \""+cmd+"\"")
+            
+def remove(*args):
+    if args[0] == "-rf" and args[1] == "/*":
+        print("Good Luck!!!!!!!")
+        quit()
         
 def signoff(*args):
     endTurn = True
@@ -63,7 +68,8 @@ register_command("clearscreen",clr)
 register_command("clear",clr)
 register_command("clr",clr)
 register_command("sell",sell)
-
+register_command("remove",remove)
+register_command("rm",remove)
 
 # Main game loop
 
