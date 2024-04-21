@@ -39,8 +39,8 @@ class resource(): #N/A, ore, food, ec, data, morale,funds
 		self.count -= amount
 
 class fund(resource):
-	def __init__(self, name, count):
-		super().__init__(name, count)
+	def __init__(self, id, name, count):
+		super().__init__(id, name, count)
 
 """
 class system(): #lifesupport, oreMining, culinary, electricityGen, research, morale
