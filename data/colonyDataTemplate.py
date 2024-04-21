@@ -50,7 +50,8 @@ class system(): #lifesupport, oreMining, culinary, electricityGen, research, mor
 """
 
 class structure():
-	def __init__(self,uuid,production:dict,consumption:dict,cost:int,count:int):
+	def __init__(self,name,uuid,production:dict,consumption:dict,cost:int,count:int):
+		self.name = name
 		self.uuid=uuid
 		self.production=production
 		self.consumption=consumption
@@ -68,8 +69,8 @@ class structure():
 		return self.count
 
 class habitatStructure(structure):
-	def __init__(self, uuid, habitatSize:int, consumption:dict, cost:int, count:int, production:dict={}):
-		super().__init__(uuid,production,consumption,cost,count)
+	def __init__(self, name, uuid, habitatSize:int, consumption:dict, cost:int, count:int, production:dict={}):
+		super().__init__(name, uuid,production,consumption,cost,count)
 		self.habitatSize = habitatSize
 	def getHabitatCapacity(self):
 		return self.habitatSize * self.count

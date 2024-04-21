@@ -25,7 +25,7 @@ def structureRun(inflow:structure):
 				i+=1
 				#return "Science is now"+str(science.count)
 			case 'Life Support Intregity (%)':
-				if lifeSupport.count + inflow.production[lifeSupport]*inflow.count != 100:
+				if lifeSupport.count + inflow.production[lifeSupport]*inflow.count <= 100:
 					lifeSupport.count += inflow.production[lifeSupport]*inflow.count
 				else:
 					lifeSupport.count = 100
@@ -56,7 +56,7 @@ def structureRun(inflow:structure):
 				science.spend(inflow.consumption[science]*inflow.count)
 				i+=1
 			case 'Life Support Intregity (%)':
-				if lifeSupport.count - inflow.consumption[lifeSupport]*inflow.count != 0:
+				if lifeSupport.count - inflow.consumption[lifeSupport]*inflow.count >= 0: #Greater or equal than exists, WHY WERE YOU USING !=
 					lifeSupport.count -= inflow.consumption[lifeSupport]*inflow.count
 				else:
 					lifeSupport.count = 0
@@ -73,7 +73,7 @@ def structureBuild(inflow:structure,howMany:int=1):
 	else:
 		funds.spend(howMany*inflow.cost)
 		inflow.count += howMany
-		return "Builing successful! You now have "+str(howMany)+" more "+str(inflow.__qualname__)
+		return "Builing successful! You now have "+str(howMany)+" more "+str(inflow.name)
 	
 def resourceSell(inflow:resource,howMuch:int=1):
 	if howMuch > inflow.count:

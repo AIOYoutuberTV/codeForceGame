@@ -16,6 +16,7 @@ def register_command(name,callback):
     Commands[name.lower()] = callback
 
 def term():
+    global endTurn
     endTurn = False
     while not endTurn:
         TUI.print(UserName+"@"+SysName+":"+Path,end="$ ")
@@ -40,6 +41,7 @@ def remove(*args):
         quit()
         
 def signoff(*args):
+    global endTurn
     endTurn = True
     TUI.clearconsole()
     

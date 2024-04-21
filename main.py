@@ -9,6 +9,7 @@ TUI.__init__()
 term.bind("sell",lambda x,y: Turns.resourceSell(resources[x],y) if (x in resources) else "Error: Resource Doesnt Exist")
 term.bind("build",lambda x,y: Turns.structureBuild(structures[x],y) if (x in structures) else "Error: Resource Doesnt Exist")
 
+TUI.addInfo("funds",funds)
 for key in resources:
     res = resources[key]
     TUI.addInfo(res.getType(),res)
