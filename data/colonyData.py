@@ -15,8 +15,10 @@ funds = fund(0,"Funds (M€)",500)
 
 #define structures
 solarPanel = structure("Solar Panel",0,{energy:15},{},4,5)
+coal = structure("Coal Power Plant",0,{energy:12000},{lifeSupport:1,ore:5},1000,0)
 mine = structure("Mine",1,{ore:15},{lifeSupport:2,energy:5},4,1)
+excavator = structure("Excavator",1,{ore:12500},{lifeSupport:20,energy:1000},4000,0)
 habitat = habitatStructure("Habitat",2,20,{energy:8,lifeSupport:10},4,1)
 farm = structure("Farm",3,{food:20},{energy:6,lifeSupport:6},6,1)
 atmosphericUnit = structure("Atmosphere Unit",4,{lifeSupport:20},{energy:5},5,1)                
-structures = {"solar_panel":solarPanel,"mine":mine,"habitat":habitat,"farm":farm,"atmospheric_unit":atmosphericUnit}
+structures = {"solar_panel":solarPanel,"mine":mine,"habitat":habitat,"farm":farm,"atmospheric_unit":atmosphericUnit,"coal_power_plant":coal,"excavator":excavator}

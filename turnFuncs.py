@@ -8,22 +8,6 @@ def structureRun(inflow:structure):
 	i = 0
 	while i < len(inflow.production):
 		match productionKeys[i].name:
-			case 'Ore':
-				ore.get(inflow.production[ore]*inflow.count) # wtf use strings for god's
-				i+=1
-				return "Ore is now:"+str(ore.count)
-			case 'Food':
-				food.get(inflow.production[food]*inflow.count)
-				i+=1
-				#return "Food is now:"+str(food.count)
-			case 'Electric Charge':
-				energy.get(inflow.production[energy]*inflow.count)
-				i+=1
-				#return "Energy is now:"+str(energy.count)
-			case 'Research Points':
-				science.get(inflow.production[science]*inflow.count)
-				i+=1
-				#return "Science is now"+str(science.count)
 			case 'Life Support Intregity (%)':
 				if lifeSupport.count + inflow.production[lifeSupport]*inflow.count <= 100:
 					lifeSupport.count += inflow.production[lifeSupport]*inflow.count
@@ -35,6 +19,10 @@ def structureRun(inflow:structure):
 				funds.get(inflow.production[fund]*inflow.count)
 				i+=1
 				#return "Funds is now:"+str(funds)
+			case _:
+				productionKeys[i].get(inflow.production[productionKeys[i]]*inflow.count) # wtf use strings for god's
+				i+=1
+				#return "Ore is now:"+str(ore.count)
 	del(i)
 
 	#Calculate the drains
@@ -42,19 +30,6 @@ def structureRun(inflow:structure):
 	i = 0
 	while i < len(inflow.consumption):
 		match consumptionKeys[i].name:
-			case 'Ore':
-				ore.spend(inflow.consumption[ore]*inflow.count)
-				i+=1
-				#return "Ore is now:"+str(ore.count)
-			case 'Food':
-				food.spend(inflow.consumption[food]*inflow.count)
-				i+=1
-			case 'Electric Charge':
-				energy.spend(inflow.consumption[energy]*inflow.count)
-				i+=1
-			case 'Research Points':
-				science.spend(inflow.consumption[science]*inflow.count)
-				i+=1
 			case 'Life Support Intregity (%)':
 				if lifeSupport.count - inflow.consumption[lifeSupport]*inflow.count >= 0: #Greater or equal than exists, WHY WERE YOU USING !=
 					lifeSupport.count -= inflow.consumption[lifeSupport]*inflow.count
@@ -63,6 +38,9 @@ def structureRun(inflow:structure):
 				i+=1
 			case 'Funds (M€)':
 				funds.spend(inflow.consumption[fund]*inflow.count)
+				i+=1
+			case _:
+				consumptionKeys[i].spend(inflow.consumption[consumptionKeys[i]]*inflow.count)
 				i+=1
 	del(i)
 
