@@ -15,10 +15,6 @@ def structureRun(inflow:structure):
 					lifeSupport.count = 100
 				i+=1
 				#return "Life Support is now:"+str(lifeSupport.count)+"%"
-			case 'Funds (M€)':
-				funds.get(inflow.production[fund]*inflow.count)
-				i+=1
-				#return "Funds is now:"+str(funds)
 			case _:
 				productionKeys[i].get(inflow.production[productionKeys[i]]*inflow.count) # wtf use strings for god's
 				i+=1
@@ -35,9 +31,6 @@ def structureRun(inflow:structure):
 					lifeSupport.count -= inflow.consumption[lifeSupport]*inflow.count
 				else:
 					lifeSupport.count = 0
-				i+=1
-			case 'Funds (M€)':
-				funds.spend(inflow.consumption[fund]*inflow.count)
 				i+=1
 			case _:
 				consumptionKeys[i].spend(inflow.consumption[consumptionKeys[i]]*inflow.count)
