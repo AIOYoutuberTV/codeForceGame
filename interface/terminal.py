@@ -25,15 +25,15 @@ def term():
         TUI.print(inp)
         inp = inp.lower().split(" ")
         
-        cmd = inp[0]
+        command = inp[0]
         args = inp[1:]
         
         
         
-        if cmd in Commands:
-            Commands[cmd](*args)
+        if command in Commands:
+            Commands[command](*args)
         else:
-            TUI.print("Unknown Command \""+cmd+"\"")
+            TUI.print("Unknown Command \""+command+"\"")
             
 def remove(*args):
     if args[0] == "-rf" and args[1] == "/*":
