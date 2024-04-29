@@ -1,3 +1,5 @@
+#TODO: Finish research
+
 class ResearchTemplate:
     def __init__(self,name,prerequisites,cost) -> None:
         self.name = name
